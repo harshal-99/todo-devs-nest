@@ -1,12 +1,12 @@
-GET http://localhost:3000/api/todo
+GET {{url}}/api/todo
 Accept: application/json
 
 ###
-GET http://localhost:3000/api/todo/{{todoId}}
+GET {{url}}/api/todo/{{todoId}}
 Accept: application/json
 
 ###
-POST http://localhost:3000/api/todo
+POST {{url}}/api/todo
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/todo/{{todoId}}
+PUT {{url}}/api/todo/{{todoId}}
 Content-Type: application/json
 
 {
@@ -29,6 +29,8 @@ Content-Type: application/json
   "dueDate": "Thu Dec 08 2022 22:21:17 GMT+0530 (India Standard Time)"
 }
 
+###
+DELETE {{url}}/api/todo/{{todoId}}
 
 ###
-DELETE http://localhost:3000/api/todo/{{todoId}}
+GET {{url}}/api/reset
