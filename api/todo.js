@@ -11,6 +11,7 @@ todoRouter.get('/', (req, res) => {
 
 todoRouter.post('/', (req, res) => {
     const {title, description, completed, priority, dueDate} = req.body
+    if(!title) return res.status(400).json({message: "Title is required"})
     const newTodo = {
         id: uuid(),
         title,
@@ -20,7 +21,7 @@ todoRouter.post('/', (req, res) => {
         dueDate
     }
     todos.push(newTodo)
-    res.json(newTodo)
+    res.status(201).json(newTodo)
 })
 
 todoRouter.get('/:id', (req, res) => {
